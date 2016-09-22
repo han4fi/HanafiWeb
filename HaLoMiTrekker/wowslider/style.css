@@ -91,7 +91,7 @@
 	position:relative;
 	float:left;
 	font-size: 0px;
-	background:url(https://han4fi.github.io/HanafiWeb/HaLoMiTrekker/wowslider/bgBullet.png) center bottom no-repeat;
+	background:url(bgBullet.png) center bottom no-repeat;
 	height:110px;
 	vertical-align:bottom;
 	padding:65px;
@@ -221,7 +221,7 @@
 	z-index:60;
 	height: 6.7em;
 	width: 3.2em;
-	background-image: url(https://han4fi.github.io/HanafiWeb/HaLoMiTrekker/wowslider/arrows.png);
+	background-image: url(arrows.png);
 }
 #wowslider-container1 a.ws_next{
 	background-position: 0 0; 
