@@ -1,6 +1,6 @@
 /*!
  * jQuery ClassyBox
- * http://www.class.pm/projects/jquery/
+ * https://www.class.pm/projects/jquery/
  *
  * Copyright 2012, Class.PM www.class.pm
  * Written by Marius Stanciu - Sergiu <marius@picozu.net>
@@ -173,13 +173,13 @@
         }
         if (c.indexOf("youtube", ".") > 0) {
             _c.append("<div class='object'></div>");
-            hrefY = "http://www.youtube.com/embed/" + c.substring(31, 42);
+            hrefY = "https://www.youtube.com/embed/" + c.substring(31, 42);
             _w.find(".object").append("<iframe class='' type='text/html' width='" + b.width + "' height='" + b.height + "' src='" + hrefY + "' frameborder='0'></iframe>");
         }
         if (c.indexOf("vimeo", ".") > 0) {
             _c.append("<div class='object'></div>");
             hrefV = c.substr(-8);
-            _w.find(".object").append("<iframe src='http://player.vimeo.com/video/" + hrefV + "?title=0&amp;byline=0&amp;portrait=0' width='" + b.width + "' height='" + b.height + "' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>");
+            _w.find(".object").append("<iframe src='https://player.vimeo.com/video/" + hrefV + "?title=0&amp;byline=0&amp;portrait=0' width='" + b.width + "' height='" + b.height + "' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>");
         }
         if (b.iframe) {
             _c.append("<iframe src='" + c + "' scrolling='auto' height='" + b.height + "' width='" + b.width + "' frameborder='0'></iframe>");
@@ -199,34 +199,34 @@
         }
         if (c.indexOf("dailymotion", ".") > 0) {
             var g = c.substring(33, 39);
-            _c.append("<iframe frameborder='0' width='" + b.width + "' height='" + b.height + "' src='http://www.dailymotion.com/embed/video/" + g + "'></iframe>")
+            _c.append("<iframe frameborder='0' width='" + b.width + "' height='" + b.height + "' src='https://www.dailymotion.com/embed/video/" + g + "'></iframe>")
         }
         if (c.indexOf("5min", ".") > 0) {
             var h = c.substr(-9);
-            _c.append("<object width='" + b.width + "' height='" + b.height + "' id='FiveminPlayer' classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000'><param name='allowfullscreen' value='true'/><param name='allowScriptAccess' value='always'/><param name='movie' value='http://embed.5min.com/" + h + "/'/><param name='wmode' value='opaque' /><embed name='FiveminPlayer' src='http://embed.5min.com/" + h + "/' type='application/x-shockwave-flash' width='" + b.width + "' height='" + b.height + "' allowfullscreen='true' allowScriptAccess='always' wmode='opaque'></embed></object>")
+            _c.append("<object width='" + b.width + "' height='" + b.height + "' id='FiveminPlayer' classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000'><param name='allowfullscreen' value='true'/><param name='allowScriptAccess' value='always'/><param name='movie' value='https://embed.5min.com/" + h + "/'/><param name='wmode' value='opaque' /><embed name='FiveminPlayer' src='https://embed.5min.com/" + h + "/' type='application/x-shockwave-flash' width='" + b.width + "' height='" + b.height + "' allowfullscreen='true' allowScriptAccess='always' wmode='opaque'></embed></object>")
         }
         if (c.indexOf("metacafe", ".") > 0) {
             var i = c.substr(30).slice(0, -1);
-            _c.append("<embed flashVars='playerVars=autoPlay=no' src='http://www.metacafe.com/fplayer/" + i + ".swf' width='" + b.width + "' height='" + b.height + "' wmode='transparent' allowFullScreen='true' allowScriptAccess='always' name='Metacafe_" + i.substring(0, 7) + "' pluginspage='http://www.macromedia.com/go/getflashplayer' type='application/x-shockwave-flash'></embed>")
+            _c.append("<embed flashVars='playerVars=autoPlay=no' src='https://www.metacafe.com/fplayer/" + i + ".swf' width='" + b.width + "' height='" + b.height + "' wmode='transparent' allowFullScreen='true' allowScriptAccess='always' name='Metacafe_" + i.substring(0, 7) + "' pluginspage='https://www.macromedia.com/go/getflashplayer' type='application/x-shockwave-flash'></embed>")
         }
         if (c.indexOf("ustream", ".") > 0) {
             var j = c.substring(31, 39);
-            _c.append("<iframe frameborder='0' width='" + b.width + "' height='" + b.height + "' src='http://www.ustream.tv/embed/recorded/" + j + "' style='border: 0px none transparent;'></iframe>")
+            _c.append("<iframe frameborder='0' width='" + b.width + "' height='" + b.height + "' src='https://www.ustream.tv/embed/recorded/" + j + "' style='border: 0px none transparent;'></iframe>")
         }
         if (c.indexOf("hell", ".") > 0) {
             var k = c.substring(28, 33);
-            _c.append("<iframe width='" + b.width + "' height='" + b.height + "' src='http://www.hell.tv/embed/video/" + k + "' frameborder='0' scrolling='no' allowfullscreen></iframe>")
+            _c.append("<iframe width='" + b.width + "' height='" + b.height + "' src='https://www.hell.tv/embed/video/" + k + "' frameborder='0' scrolling='no' allowfullscreen></iframe>")
         }
         if (c.indexOf("vevo", ".") > 0) {
             var l = c.substr(-12);
-            _c.append("<object width='" + b.width + "' height='" + b.height + "'><param name='movie' value='http://videoplayer.vevo.com/embed/Embedded?videoId=" + l + "&playlist=false&autoplay=0&playerId=62FF0A5C-0D9E-4AC1-AF04-1D9E97EE3961&playerType=embedded&env=0&cultureName=en-US&cultureIsRTL=False'></param><param name='wmode' value='transparent'></param><param name='bgcolor' value='#000000'></param><param name='allowFullScreen' value='true'></param><param name='allowScriptAccess' value='always'></param><embed src='http://videoplayer.vevo.com/embed/Embedded?videoId=" + l + "&playlist=false&autoplay=0&playerId=62FF0A5C-0D9E-4AC1-AF04-1D9E97EE3961 &playerType=embedded&env=0&cultureName=en-US&cultureIsRTL=False' type='application/x-shockwave-flash' allowfullscreen='true' allowscriptaccess='always' width='" + b.width + "' height='" + b.height + "' bgcolor='#000000' wmode='transparent'></embed></object>")
+            _c.append("<object width='" + b.width + "' height='" + b.height + "'><param name='movie' value='https://videoplayer.vevo.com/embed/Embedded?videoId=" + l + "&playlist=false&autoplay=0&playerId=62FF0A5C-0D9E-4AC1-AF04-1D9E97EE3961&playerType=embedded&env=0&cultureName=en-US&cultureIsRTL=False'></param><param name='wmode' value='transparent'></param><param name='bgcolor' value='#000000'></param><param name='allowFullScreen' value='true'></param><param name='allowScriptAccess' value='always'></param><embed src='https://videoplayer.vevo.com/embed/Embedded?videoId=" + l + "&playlist=false&autoplay=0&playerId=62FF0A5C-0D9E-4AC1-AF04-1D9E97EE3961 &playerType=embedded&env=0&cultureName=en-US&cultureIsRTL=False' type='application/x-shockwave-flash' allowfullscreen='true' allowscriptaccess='always' width='" + b.width + "' height='" + b.height + "' bgcolor='#000000' wmode='transparent'></embed></object>")
         }
         if (c.indexOf("myspace", ".") > 0) {
             var m = c.substr(-9);
-            _c.append("<object width='" + b.width + "' height='" + b.height + "'><param name='allowFullScreen' value='true'/><param name='wmode' value='transparent'/><param name='movie' value='http://mediaservices.myspace.com/services/media/embed.aspx/m=" + m + ",t=1,mt=video'/><embed src='http://mediaservices.myspace.com/services/media/embed.aspx/m=" + m + ",t=1,mt=video' width='" + b.width + "' height='" + b.height + " allowFullScreen='true' type='application/x-shockwave-flash' wmode='transparent'></embed></object>")
+            _c.append("<object width='" + b.width + "' height='" + b.height + "'><param name='allowFullScreen' value='true'/><param name='wmode' value='transparent'/><param name='movie' value='https://mediaservices.myspace.com/services/media/embed.aspx/m=" + m + ",t=1,mt=video'/><embed src='https://mediaservices.myspace.com/services/media/embed.aspx/m=" + m + ",t=1,mt=video' width='" + b.width + "' height='" + b.height + " allowFullScreen='true' type='application/x-shockwave-flash' wmode='transparent'></embed></object>")
         }
         if (b.social) {
-            var n = "http://www.facebook.com/share.php?u=" + window.location + "?cbox=" + c,
+            var n = "https://www.facebook.com/share.php?u=" + window.location + "?cbox=" + c,
                     twl = "https://twitter.com/share?url=" + window.location + "?cbox=" + c,
                     gpl = "https://plus.google.com/share?url=" + window.location + "?cbox=" + c;
             Panel.append("<div class='fb'><a href='" + n + "' target='_blank'>Facebook</a></div><div class='tw'><a href='" + twl + "' target='_blank'>Twitter</a></div><div class='gp'><a href='" + gpl + "' target='_blank'>Google plus</a></div>");
