@@ -171,11 +171,7 @@
                 height: b.height
             });
         }
-        if (c.indexOf("youtube", ".") > 0) {
-            _c.append("<div class='object'></div>");
-            hrefY = "https://www.youtube.com/embed/" + c.substring(31, 42);
-            _w.find(".object").append("<iframe class='' type='text/html' width='" + b.width + "' height='" + b.height + "' src='" + hrefY + "' frameborder='0'></iframe>");
-        }
+        
         if (c.indexOf("vimeo", ".") > 0) {
             _c.append("<div class='object'></div>");
             hrefV = c.substr(-8);
