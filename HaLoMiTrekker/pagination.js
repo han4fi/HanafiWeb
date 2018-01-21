@@ -23,21 +23,21 @@ if (nomerhal == 2) {
 if (jenis == "page") {
 html += '<span class="showpage"><a href="' + home_page + '">' + upPageWord + '</a></span>'
 } else {
-html += '<span class="art-button"><a href="/search/label/' + lblname1 + '?max-results=' + postperpage + '">' + upPageWord + '</a></span>'
+html += '<span class="showpageNum"><a href="/search/label/' + lblname1 + '?max-results=' + postperpage + '">' + upPageWord + '</a></span>'
 }
 } else {
 if (jenis == "page") {
-html += '<span class="art-button"><a href="#" onclick="redirectpage(' + prevnomer + ');return false">' + upPageWord + '</a></span>'
+html += '<span class="showpageNum"><a href="#" onClick="redirectpage(' + prevnomer + ');return false">' + upPageWord + '</a></span>'
 } else {
-html += '<span class="art-button"><a href="#" onclick="redirectlabel(' + prevnomer + ');return false">' + upPageWord + '</a></span>'
+html += '<span class="showpageNum"><a href="#" onClick="redirectlabel(' + prevnomer + ');return false">' + upPageWord + '</a></span>'
 }
 }
 }
 if (mulai > 1) {
 if (jenis == "page") {
-html += '<span class="art-button"><a href="' + home_page + '">1</a></span>'
+html += '<span class="showpageNum"><a href="' + home_page + '">1</a></span>'
 } else {
-html += '<span class="art-button"><a href="/search/label/' + lblname1 + '?max-results=' + postperpage + '">1</a></span>'
+html += '<span class="showpageNum"><a href="/search/label/' + lblname1 + '?max-results=' + postperpage + '">1</a></span>'
 }
 }
 if (mulai > 2) {
@@ -48,15 +48,15 @@ if (nomerhal == jj) {
 html += '<span class="showpagePoint">' + jj + '</span>'
 } else if (jj == 1) {
 if (jenis == "page") {
-html += '<span class="art-button"><a href="' + home_page + '">1</a></span>'
+html += '<span class="showpageNum"><a href="' + home_page + '">1</a></span>'
 } else {
-html += '<span class="art-button"><a href="/search/label/' + lblname1 + '?max-results=' + postperpage + '">1</a></span>'
+html += '<span class="showpageNum"><a href="/search/label/' + lblname1 + '?max-results=' + postperpage + '">1</a></span>'
 }
 } else {
 if (jenis == "page") {
-html += '<span class="art-button"><a href="#" onclick="redirectpage(' + jj + ');return false">' + jj + '</a></span>'
+html += '<span class="showpageNum"><a href="#" onClick="redirectpage(' + jj + ');return false">' + jj + '</a></span>'
 } else {
-html += '<span class="art-button"><a href="#" onclick="redirectlabel(' + jj + ');return false">' + jj + '</a></span>'
+html += '<span class="showpageNum"><a href="#" onClick="redirectlabel(' + jj + ');return false">' + jj + '</a></span>'
 }
 }
 }
@@ -65,17 +65,17 @@ html += '...'
 }
 if (akhir < maksimal) {
 if (jenis == "page") {
-html += '<span class="art-button"><a href="#" onclick="redirectpage(' + maksimal + ');return false">' + maksimal + '</a></span>'
+html += '<span class="showpageNum"><a href="#" onClick="redirectpage(' + maksimal + ');return false">' + maksimal + '</a></span>'
 } else {
-html += '<span class="art-button"><a href="#" onclick="redirectlabel(' + maksimal + ');return false">' + maksimal + '</a></span>'
+html += '<span class="showpageNum"><a href="#" onClick="redirectlabel(' + maksimal + ');return false">' + maksimal + '</a></span>'
 }
 }
 var nextnomer = parseInt(nomerhal) + 1;
 if (nomerhal < maksimal) {
 if (jenis == "page") {
-html += '<span class="art-button"><a href="#" onclick="redirectpage(' + nextnomer + ');return false">' + downPageWord + '</a></span>'
+html += '<span class="showpageNum"><a href="#" onClick="redirectpage(' + nextnomer + ');return false">' + downPageWord + '</a></span>'
 } else {
-html += '<span class="art-button"><a href="#" onclick="redirectlabel(' + nextnomer + ');return false">' + downPageWord + '</a></span>'
+html += '<span class="showpageNum"><a href="#" onClick="redirectlabel(' + nextnomer + ');return false">' + downPageWord + '</a></span>'
 }
 }
 var pageArea = document.getElementsByName("pageArea");
