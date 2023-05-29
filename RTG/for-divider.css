@@ -147,52 +147,6 @@ style, a {
   /* ditch ugly focus outline */
   /* switch highlight flag to 1 */
 }
-style:focus, a:focus {
-  outline: none;
-}
-style:focus, style:hover, a:focus, a:hover {
-  --hl: 1 ;
-}
-style::before, a::before {
-  position: absolute;
-  /* take out of flow */
-  content: "";
-}
-
-style {
-  /* interactive code box */
-  margin-top: 0.5rem;
-  /* a bit of spacing around */
-  /* create spacing around to be fille by 
-   * pseudo-created background */
-  border: solid 0.5rem transparent;
-  /* box glow in a highlight state (hover, focus) */
-  box-shadow: 2px 2px 5px hsla(0, 0%, 7%, calc(var(--hl)*.65));
-  color: #dedede;
-  /* fallback text color */
-  /* some stupid syntax highlighting
-   * remove it by removing / at end of this line */
-  background: linear-gradient(-90deg, white 1ch, transparent 0), linear-gradient(90deg, #ffe53b 4.5ch, #dedede 0 6.5ch, #f58ad9 0 21ch, #dedede 0 22ch, #3bffa3 0);
-  -webkit-background-clip: text;
-  color: transparent;
-  /**/
-  /* text glow in a highlight state (hover, focus) */
-  text-shadow: 0 0 calc(var(--hl)*5px) rgba(255, 255, 255, 0.65);
-  transition: 0.3s ease-out;
-  /* smooth state change */
-  transition-property: box-shadow, text-shadow;
-}
-style::before {
-  z-index: -1;
-  /* place under parent */
-  /* fill border space around parent */
-  inset: -0.5rem;
-  background: #121212;
-  /* dark contrasting background */
-}
-
-
-
 section a {
   z-index: 1;
   /* since we're adding a background, prevent text 
