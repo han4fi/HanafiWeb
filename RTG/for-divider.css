@@ -15,10 +15,6 @@
 }
 
 section{
-  margin: calc(-.5*var(--space)) 0;
-}
-
-section{
   grid-gap: 1rem;
   place-items: center;
 }
