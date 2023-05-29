@@ -16,7 +16,6 @@
 
 section{
   margin: calc(-.5*var(--space)) 0;
-  padding: calc(var(--space)) 0.5rem;
 }
 
 section{
