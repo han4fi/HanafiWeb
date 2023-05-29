@@ -1,0 +1,256 @@
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 5deg;
+  inherits: true;
+}
+@property --space {
+  syntax: "<length-percentage>";
+  initial-value: 8.7488663526vw;
+  inherits: true;
+}
+@property --hypot {
+  syntax: "<length-percentage>";
+  initial-value: 100.3819837543vw;
+  inherits: true;
+}
+
+section{
+  /* negative vertical spacing needed for overlap */
+  margin: calc(-.5*var(--space)) 0;
+  /* spacing allowed by angled verion vertically, 
+   * base spacing laterally */
+  padding: calc(var(--space)) 0.5rem;
+}
+
+section{
+  grid-gap: 1rem;
+  /* space between paragraphs */
+  /* put each item on their grid in its cell middle
+   * along both axes */
+  place-items: center;
+}
+
+section {
+  --_p: var(--p, 0);
+  /* parity flag dfault value */
+  --not-p: calc(1 - var(--_p));
+  /* complementary */
+  --sgn-p: calc(2*var(--_p) - 1);
+  /* parity sign */
+  /* to attach absolutely positioned pseudo */
+  position: relative;
+  /* tiny adjustment to bottom padding */
+  padding-bottom: calc(var(--space) + 0.5rem);
+  /* give each a pastel gradient */
+  background: linear-gradient(to bottom right, var(--sl));
+  /* angled clip */
+  -webkit-clip-path: polygon(calc(var(--not-p)*100%) 0, calc(var(--_p)*100%) var(--space), calc(var(--_p)*100%) calc(100% - var(--space)), calc(var(--not-p)*100%) 100%);
+          clip-path: polygon(calc(var(--not-p)*100%) 0, calc(var(--_p)*100%) var(--space), calc(var(--_p)*100%) calc(100% - var(--space)), calc(var(--not-p)*100%) 100%);
+  /* change parity flag value from default 0 
+   * to 1 on even items */
+}
+section:nth-of-type(2n) {
+  --p: 1 ;
+}
+section::after {
+  /* creates to section shadow */
+  position: absolute;
+  /* take out of flow */
+  /* middle of vertical spacing from top */
+  top: calc(.5*var(--space));
+  /* from half the parent minus half of itself */
+  left: calc(50% - .5*var(--hypot));
+  /* its width is that of the angled edge */
+  width: var(--hypot);
+  height: 1rem;
+  /* small height */
+  /* rotate one way or another depending on parity */
+  transform: rotate(calc(var(--sgn-p)*var(--angle)));
+  background: radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, 0.375), rgba(0, 0, 0, 0.125), transparent) 50% 0/115% 100%;
+  /* thought it makes it look better
+   * not that important, could be ditched */
+  mix-blend-mode: multiply;
+  content: "";
+}
+
+section h2 {
+  /* avoid padding adding to width */
+  box-sizing: border-box;
+  margin: calc(-1*var(--space)) calc(var(--_p)*(100% - var(--hypot))) var(--space) calc(var(--not-p)*(100% - var(--hypot)));
+  /* its width is that of an angled section */
+  width: var(--hypot);
+  /* limit text line length via padding lateral */
+  padding: 0.5rem calc(.5*(var(--hypot) - 18em));
+  /* rotate around top right/ left depending on parity */
+  transform-origin: calc(var(--not-p)*100%) 0;
+  /* rotate one way or another depending on parity */
+  transform: rotate(calc(var(--sgn-p)*var(--angle)));
+  /* align right or default left depending on parity */
+  text-align: var(--p, right);
+  /* for better contrast with background
+   * not that important, could be ditched */
+  text-shadow: 1px 1px #fff;
+}
+
+section p {
+  max-width: 39em;
+}
+
+
+section .box {
+  /* initial value for passing support test flag */
+  --pass: 0;
+  --not-pass: calc(1 - var(--pass));
+  /* complementary */
+  /* avoid padding & border adding to width */
+  box-sizing: border-box;
+  border: solid 1px hsl(calc(359 - var(--pass)*261), calc(47% - var(--pass)*15%), calc(51% - var(--pass)*6%));
+  border-left-width: 5px;
+  /* thicker left border */
+  padding: 0.5rem;
+  /* box palette depends on passing support test */
+  background: hsla(0, 0%, calc(var(--pass)*100%), 0.57);
+  color: hsl(0, 0%, calc(var(--not-pass)*100%));
+  /* change flag on passed support test box */
+}
+section .box[data-view=pass] {
+  --pass: 1 ;
+}
+
+
+[data-view=fail] {
+  display: block;
+}
+
+[data-view=pass] {
+  display: none;
+}
+
+/* code boxes text */
+code, kbd, style {
+  font: 1.125em ubuntu mono, consolas, monaco, monospace;
+}
+
+code, kbd {
+  padding: 1px 3px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+style, a {
+  --hl: 0;
+  /* highlight state flag, initial value */
+  /* shrink width to content for style, 
+   * avoid messing up pseudo edge attachment for links */
+  display: inline-block;
+  /* to attach absolutely positioned pseudo */
+  position: relative;
+  /* ditch ugly focus outline */
+  /* switch highlight flag to 1 */
+}
+style:focus, a:focus {
+  outline: none;
+}
+style:focus, style:hover, a:focus, a:hover {
+  --hl: 1 ;
+}
+style::before, a::before {
+  position: absolute;
+  /* take out of flow */
+  content: "";
+}
+
+style {
+  /* interactive code box */
+  margin-top: 0.5rem;
+  /* a bit of spacing around */
+  /* create spacing around to be fille by 
+   * pseudo-created background */
+  border: solid 0.5rem transparent;
+  /* box glow in a highlight state (hover, focus) */
+  box-shadow: 2px 2px 5px hsla(0, 0%, 7%, calc(var(--hl)*.65));
+  color: #dedede;
+  /* fallback text color */
+  /* some stupid syntax highlighting
+   * remove it by removing / at end of this line */
+  background: linear-gradient(-90deg, white 1ch, transparent 0), linear-gradient(90deg, #ffe53b 4.5ch, #dedede 0 6.5ch, #f58ad9 0 21ch, #dedede 0 22ch, #3bffa3 0);
+  -webkit-background-clip: text;
+  color: transparent;
+  /**/
+  /* text glow in a highlight state (hover, focus) */
+  text-shadow: 0 0 calc(var(--hl)*5px) rgba(255, 255, 255, 0.65);
+  transition: 0.3s ease-out;
+  /* smooth state change */
+  transition-property: box-shadow, text-shadow;
+}
+style::before {
+  z-index: -1;
+  /* place under parent */
+  /* fill border space around parent */
+  inset: -0.5rem;
+  background: #121212;
+  /* dark contrasting background */
+}
+
+
+
+section a {
+  z-index: 1;
+  /* since we're adding a background, prevent text 
+   * from sticking to edges of this background */
+  padding: 0 2px;
+  color: #fc8621;
+  text-decoration: none;
+  /* ditch underline */
+  isolation: isolate;
+}
+section a::before {
+  /* for reference: inset
+   * https://twitter.com/anatudor/status/1478412237295566850 */
+  inset: 0;
+  /* cover parent's padding area */
+  transform-origin: 0 100%;
+  /* relative to bottom */
+  /* cover parent of just tiny strip at bottom 
+   * depending on whether in highlight state or not */
+  transform: scaley(calc(var(--hl) + .1*(1 - var(--hl))));
+  /* same background as parent color */
+  background: currentcolor;
+  mix-blend-mode: difference;
+  /* XOR effect */
+  /* smooth grow from underline to parent cover */
+  transition: transform 0.3s ease-out;
+}
+
+[data-ico] {
+  /* if followed by emoji icon */
+  margin-right: 1.5em;
+  /* pretty much icon size */
+}
+[data-ico]::after {
+  position: absolute;
+  /* take out of flow */
+  /* its left edge is 2px to the right of right edge */
+  left: calc(100% + 2px);
+  content: attr(data-ico);
+}
+
+@supports (z-index: tan(0deg)) {
+  /* if trig in CSS is supported */
+  body {
+    /* make angle & all values depending on it actually dynamic, 
+     * not just "glorified constants" */
+    --angle: clamp(0deg, var(--custom-angle), var(--limit, 15deg));
+    --space: calc(100vw*tan(var(--angle)));
+    --hypot: calc(100vw/cos(var(--angle))) ;
+  }
+
+  [data-feat=trig] {
+    /* CSS trig support info boxes display toggle */
+  }
+  [data-feat=trig][data-view=fail] {
+    display: none;
+  }
+  [data-feat=trig][data-view=pass] {
+    display: block;
+  }
+}
