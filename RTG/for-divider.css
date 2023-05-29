@@ -51,7 +51,7 @@ section h2 {
   padding: 0.5rem calc(.5*(var(--hypot) - 18em));
   transform-origin: calc(var(--not-p)*100%) 0;
   transform: rotate(calc(var(--sgn-p)*var(--angle)));
-  text-align: var(--p, right);
+  text-align: center;
   text-shadow: 1px 1px #fff;
 }
 
