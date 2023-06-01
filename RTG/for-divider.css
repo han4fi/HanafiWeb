@@ -47,7 +47,7 @@ section::after {
 section h2 {
   box-sizing: border-box;
   margin: calc(-1*var(--space)) calc(var(--_p)*(100% - var(--hypot))) var(--space) calc(var(--not-p)*(100% - var(--hypot)));
-  width: 100%;
+  width: 99%;
   padding: 0.5rem calc(.5*(var(--hypot) - 18em));
   transform-origin: calc(var(--not-p)*100%) 0;
   transform: rotate(calc(var(--sgn-p)*var(--angle)));
