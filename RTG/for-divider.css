@@ -14,12 +14,12 @@
   inherits: true;
 }
 
-section{
+kontak{
   grid-gap: 1rem;
   place-items: center;
 }
 
-section {
+kontak {
   --_p: var(--p, 0);
   --not-p: calc(1 - var(--_p));
   --sgn-p: calc(2*var(--_p) - 1);
@@ -29,10 +29,10 @@ section {
   -webkit-clip-path: polygon(calc(var(--not-p)*100%) 0, calc(var(--_p)*100%) var(--space), calc(var(--_p)*100%) calc(100% - var(--space)), calc(var(--not-p)*100%) 100%);
           clip-path: polygon(calc(var(--not-p)*100%) 0, calc(var(--_p)*100%) var(--space), calc(var(--_p)*100%) calc(100% - var(--space)), calc(var(--not-p)*100%) 100%);
 }
-section:nth-of-type(2n) {
+kontak:nth-of-type(2n) {
   --p: 1 ;
 }
-section::after {
+kontak::after {
   position: absolute;
   top: calc(.5*var(--space));
   left: calc(50% - .5*var(--hypot));
@@ -44,7 +44,7 @@ section::after {
   content: "";
 }
 
-section h2 {
+kontak h2 {
   box-sizing: border-box;
   margin: calc(-1*var(--space)) calc(var(--_p)*(100% - var(--hypot))) var(--space) calc(var(--not-p)*(100% - var(--hypot)));
   width: 99%;
@@ -63,14 +63,14 @@ section h2 {
   display: none;
 }
 
-section a {
+kontak a {
   z-index: 1;
   padding: 0 2px;
   color: #fc8621;
   text-decoration: none;
   isolation: isolate;
 }
-section a::before {
+kontak a::before {
   inset: 0;
   transform-origin: 0 100%;
   transform: scaley(calc(var(--hl) + .1*(1 - var(--hl))));
