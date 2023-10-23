@@ -2,10 +2,7 @@
 html {
   scroll-behavior: smooth;
 }
-body {
-  font-family: 'Noto Sans HK', sans-serif;
-  background: #fff;
-}
+
 .slider {
   margin-bottom: 30px;
   position: relative;
