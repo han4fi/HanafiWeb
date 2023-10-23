@@ -3,11 +3,11 @@ html {
   scroll-behavior: smooth;
 }
 
-.slider {
+.slidernaffowl {
   margin-bottom: 30px;
   position: relative;
 }
-.slider .owl-item.active.center .slider-card {
+.slidernaffowl .owl-item.active.center .slider-card {
   transform: scale(1.15);
   opacity: 1;
   background: #ff9966; /* fallback for old browsers */
