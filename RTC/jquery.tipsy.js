@@ -1,4 +1,4 @@
-//<![CDATA[
+
 jQuery(document).ready(function($) {
 // Images Tip
   $('.jowo-pix .box-content li a').tipsy({gravity: 's', fade: true});
@@ -46,4 +46,3 @@ jQuery(document).ready(function($) {
 
 
 }); 
-//]]>
